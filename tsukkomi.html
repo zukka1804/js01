@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/sample.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <title>師匠のひとこと</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>明石家さんまの一言</h1>
+  </header>
+
+  <main>
+
+
+
+
+    <!-- 
+<div class="center">
+<a href="" class="btn btn--orange">START</a>
+</div> -->
+
+    <div class="start">
+      <button id="btn">START</button>
+    </div>
+
+
+
+    <div class="main_question box27">
+      <span class="box-title">Question</span>
+      <p>Ｑ．後輩に厳しい明石家さんまが、岡村隆史から「ムチばかりじゃなくてアメもくださいよ」と言われたときの返しとは？</p>
+    </div>
+
+
+
+    <!-- 
+<div class="main_question box17">
+<p　class="question">Ｑ．後輩に厳しい明石家さんまが岡村隆史から「ムチばかりじゃなくてたまにはアメくださいよ」と言われたときの返しは？</p>
+</div> -->
+
+    <!-- <div id="demo_base">
+  <div id="demo_btn">ピンポン</div>
+</div> -->
+
+    <!-- <audio id="demo_sound" preload="auto">
+  <source src="/sound/demo/click/003.mp3" type="audio/mp3">
+</audio> -->
+
+
+
+    <ul>
+      <li id="answer1">１００年早いわ！</li>
+      <li id="answer2">ムチなめとけ！</li>
+      <li id="answer3">アメ売り切れてるねん</li>
+    </ul>
+    <div class="question_sugimoto">どれが正解か言うてみい</div>
+<div class="comments">
+    <div id="judgment">はよせえや</div>
+    <div class="okamura_comment">
+      <span id="okamura_answer">ちょっと待ってください</span>
+      </div>
+
+</div>
+
+  <div class="naraberu">
+    <div class="sugimoto">
+      <img src="sugimoto.png" width="400px" height="400px" alt="comedian_sugimoto">
+    </div>
+    <div class="takashi">
+      <img src="okamura2.png" width="400px" height="400px" alt="comedian_okamura" id="okamura">
+    </div>
+  </div>
+
+  </main>
+
+  <footer></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+window.onload = function() {
+        var my_audio = new Audio("start.mp3");
+            //ボタンにクリックイベントを設定
+            document.getElementById("btn").onclick = function() {
+                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+                my_audio.play();  //サウンドを再生
+            }
+    }
+
+
+
+
+    // $(function() {
+    //  // ボタンをクリックしたら発動
+    //  $("#btn").click(function() {
+    //    // 1.5秒かけてゆっくりフェードインさせる
+    //    $("#okamura").fadeIn(1500);
+    //  });
+    // });
+
+
+
+
+    // $("#okamura").on("click",function(){
+    //   $("#okamura").hide().fadeIn('slow');
+
+    // }
+
+
+    // $(function() {
+    //  // 一旦hide()で隠してフェードインさせる
+    //  $("#okamura").hide().fadeIn('slow');
+    // });
+
+
+    // const btn = document.querySelector("#btn")
+    // btn.onclick= function(e){
+    //   $('#takashi').fadeIn(1500)
+
+    // }
+
+    // const answer1 = document.querySelector("#answer1")
+    // answer1.onclick= function(e){
+    // alert("あああ");
+    // }
+
+    // const answer2 = document.querySelector("#answer2")
+    // answer2.onclick= function(e){
+    // alert("いいい");
+    // }
+
+    // const answer3 = document.querySelector("#answer3")
+    // answer3.onclick= function(e){
+    // alert("ううう");
+    // }
+
+
+    // if (condition) {
+
+    // }
+
+
+
+    // window.onload = () => {
+    //         const se     = document.querySelector('#demo_sound');
+    //         document.querySelector("#demo_btn").addEventListener("click", () => {
+    //             se.play();
+    //         });
+    //     };
+
+
+
+
+
+
+    //じゃんけん用のSCRIPTを書いてください
+
+    //1. 乱数１～３
+    $("#answer1").on("click", function () {
+      const num = Math.ceil(Math.random() * 3);
+      console.log(num);
+
+      //2.if分岐処理
+      if (num == 1) {
+        $("#okamura_answer").html("１００年早いって言うてました")
+        $("#judgment").html("そんな真面目な答えしかないのか！")
+      }
+
+      if (num == 2) {
+        $("#okamura_answer").html("絶対言ってました")
+        $("#judgment").html("おれ、そんなおもろないこと言わへんで")
+      }
+
+      if (num == 3) {
+        $("#okamura_answer").html("さんま師匠大丈夫です")
+        $("#judgment").html("師匠って呼ぶな。仁鶴師匠ちゃうねんから")
+      }
+      //3.表示処理
+
+
+    })
+
+
+    $("#answer2").on("click", function () {
+      const num = Math.ceil(Math.random() * 3);
+      console.log(num);
+
+      if (num == 1) {
+        $("#okamura_answer").html("ホンマにすごい返しやと思いました")
+        $("#judgment").html("せやろ")
+      }
+
+      if (num == 2) {
+        $("#okamura_answer").html("あのときのさんまさん怖かったです")
+        $("#judgment").html("ハマコーさんよりましやろ")
+      }
+
+      if (num == 3) {
+        $("#okamura_answer").html("ムチなめとけは出ないですよ")
+        $("#judgment").html("またラジオで言うてな。")
+      }
+    })
+
+
+    $("#answer3").on("click", function () {
+      const num = Math.ceil(Math.random() * 3);
+      console.log(num);
+
+      if (num == 1) {
+        $("#okamura_answer").html("アメ売り切れてるって言ってました")
+        $("#judgment").html("そんなおもんないことよう言わん")
+      }
+
+      if (num == 2) {
+        $("#okamura_answer").html("アメのことを何か言うてましたやん")
+        $("#judgment").html("エピソードトーク下手か！")
+      }
+
+      if (num == 3) {
+        $("#okamura_answer").html("アメがどうのこうのって・・・")
+        $("#judgment").html("何言うてんねん。サバンナ八木ちゃうねんから")
+      }
+    })
+
+
+
+
+// <input type="button" value="btn" onclick="OnButtonClick();"/><br />
+
+
+
+
+// let a = ("#gu_btn"),("#cho_btn"),("#par_btn")
+
+
+  //1. 乱数１～３
+
+
+
+
+
+
+
+
+// //    function btn_click =()
+
+
+//    //2.if分岐処理
+
+//     let view = "";
+//     if(r==1){
+//         view = "グー"
+//     }
+//     if(r==2){
+//         view = "チョキ"
+//     }
+//     if(r==3){
+//         view = "パー"
+//     }
+
+
+//    
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
